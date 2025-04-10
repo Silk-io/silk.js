@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import JobCard from "../components/cards/JobCard";
+import JobCard from "../Components/Cards/JobCard";
 import jobsData from "../data/mockJobs"; // Mock data array
 
 function JobSwipePage() {
