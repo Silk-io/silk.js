@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import JobCard from "../Components/Cards/JobCard";
+import JobCard from "../components/cards/JobCard";
 import jobsData from "../data/mockJobs"; // Mock data array
 
 function JobSwipePage() {
@@ -30,23 +30,11 @@ function JobSwipePage() {
 
       {jobsData[currentIndex] ? (
         <>
-          <JobCard job={jobsData[currentIndex]} />
-
-          <div className="flex gap-6 mt-6">
-            <button
-              onClick={handleSwipeLeft}
-              className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-xl shadow-lg"
-            >
-              ❌ Skip
-            </button>
-
-            <button
-              onClick={handleSwipeRight}
-              className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-xl shadow-lg"
-            >
-              ✅ Save
-            </button>
-          </div>
+          <JobCard
+            job={jobsData[currentIndex]}
+            swipeLeft={handleSwipeLeft}
+            swipeRight={handleSwipeRight}
+          />
         </>
       ) : (
         <div className="text-xl text-gray-600">No more jobs to show.</div>

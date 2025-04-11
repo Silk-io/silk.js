@@ -11,7 +11,7 @@ function CircleIcon({
 }) {
   return (
     <div
-      className="flex items-center justify-center rounded-full transition-colors duration-200"
+      className="flex items-center justify-center rounded-full transition-colors duration-100"
       style={{
         backgroundColor: color,
         width: size,
