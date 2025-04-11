@@ -6,8 +6,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/s" element={<LandingPage />} />
-        <Route path="/" element={<JobSwipePage />} />
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/jobsearch" element={<JobSwipePage />} />
       </Routes>
     </Router>
   );
