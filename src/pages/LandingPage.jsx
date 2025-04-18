@@ -1,35 +1,31 @@
-import { useState } from "react";
-import reactLogo from "/src/assets/icons/react.svg";
-import viteLogo from "/vite.svg";
+import React from "react";
+import JobCard from "../components/cards/JobCard";
+import jobsData from "../data/mockJobs";
 import "./LandingPage.css";
 
-function App() {
-  const [count, setCount] = useState(0);
 
+function LandingPage() {
+  const job = jobsData[0];
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  );
-}
+    <div className="landing-page">
+      <div className="content-container">
+        {/* Logo / Brand Name */}
+        <h1 className="logo">Silk</h1>
 
-export default App;
+        {/* Headline */}
+        <h2 className="headline">Find your next job</h2>
+
+        {/* Subheadline */}
+        <p className="subheading">
+          Silk helps you discover and <br/>swipe through job opportunities.
+        </p>
+
+        {/* Primary CTA Button */}
+        <button className="primary-button">Get Started</button>
+      </div>
+      <div className="jobcard-container">
+        <JobCard job={job}/>
+      </div>
+    </div>
+)}
+export default LandingPage;
