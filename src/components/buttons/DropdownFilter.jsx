@@ -1,9 +1,9 @@
 // import React from "react";
-import { useState } from "react";
-import Popper from "popper.js";
+// import { useState } from "react";
+// import Popper from "popper.js";
 import "bootstrap/dist/js/bootstrap.js";
 
-function DropdownFilter({ items, heading }) {
+function DropdownFilter({ items }) {
   return (
     <div className="d-flex justify-content-center mt-5">
       <div className="w-20 p-2 border rounded">
