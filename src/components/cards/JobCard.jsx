@@ -10,7 +10,7 @@ function JobCard({ job, flipped, swipeLeft, swipeRight, toggleFlip, swipeDirecti
     }${swipeDirection}`}
   > 
       <button
-        className="more-details-button absolute top-4 right-4 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700"
+        className="more-details-button absolute top-4 right-4 px-4 py-2 text-gray rounded-lg hover:font-bold"
         onClick={toggleFlip}
       >
          {flipped ? "Back" : "More Details"}
