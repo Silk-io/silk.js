@@ -1,10 +1,28 @@
 import React from "react";
+import "./JobCard.css";
 import CircleIcon from "../buttons/CircleIcon";
 import crossIcon from "/src/assets/icons/cross.svg";
 import heartIcon from "/src/assets/icons/heart.svg";
-function JobCard({ job, swipeLeft, swipeRight }) {
+function JobCard({ job, flipped, swipeLeft, swipeRight, toggleFlip, swipeDirection }) {
   return (
-    <div className="w-full max-w-7/12 p-6 bg-white rounded-2xl shadow-xl text-left border-4 border-white">
+    <div   className={`job-card w-full max-w-7/12 p-6 bg-white rounded-2xl shadow-xl text-left border-4 border-white ${
+      flipped ? "flipped" : ""
+    }${swipeDirection}`}
+  > 
+      <button
+        className="more-details-button absolute top-4 right-4 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700"
+        onClick={toggleFlip}
+      >
+         {flipped ? "Back" : "More Details"}
+      </button>
+      {flipped ? (
+        // Content to display when the card is flipped - need to add more to
+        <div className="flipped-content">
+          <h2 className="text-2xl font-bold">More About the Job</h2>
+          {job.description.slice(0, 500)}
+        </div>
+      ) : (
+        <>
       <h2 className="text-2xl font-bold">{job.title}</h2>
       <p className="text-gray-700">{job.company}</p>
       <p className="text-sm text-gray-500">{job.location}</p>
@@ -31,8 +49,11 @@ function JobCard({ job, swipeLeft, swipeRight }) {
           onClick={swipeRight}
         />
       </div>
+      </>
+      )}
     </div>
   );
 }
+
 
 export default JobCard;
